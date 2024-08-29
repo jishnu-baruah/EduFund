@@ -1,5 +1,5 @@
 # EduFund
-
+![EduFund Logo](EduFund.png)
 EduFund is a decentralized platform that enables users to create and manage educational funding campaigns. The application consists of a front-end client built with Vite and a smart contract backend managed with Hardhat.
 
 ## Table of Contents
