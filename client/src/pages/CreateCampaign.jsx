@@ -7,6 +7,22 @@ import { money } from '../assets';
 import { CustomButton, FormField, Loader } from '../components';
 import { checkIfImage } from '../utils';
 
+const theme = {
+  colors: {
+    50: '#F6F5F8',
+    100: '#CAC3D4',
+    200: '#9E92B0',
+    300: '#71608D',
+    400: '#4A356A',
+    500: '#412E5D',
+    600: '#372850',
+    700: '#2E2142',
+    800: '#251A35',
+    900: '#1B1427',
+    950: '#120D1A'
+  }
+};
+
 const CreateCampaign = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
@@ -41,11 +57,11 @@ const CreateCampaign = () => {
   };
 
   return (
-    <div className="bg-[#14142b] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4 shadow-lg shadow-[#2a2a40]">
+    <div className="bg-[#1B1427] flex justify-center items-center flex-col rounded-[10px] sm:p-10 p-4 shadow-lg shadow-[#120D1A]">
       {isLoading && <Loader />}
       
-      <div className="flex justify-center items-center p-[16px] sm:min-w-[380px] bg-[#1c1c3a] rounded-[10px] border border-[#3a3a55]">
-        <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-[#e0e0f8]">
+      <div className="flex justify-center items-center p-[16px] sm:min-w-[380px] bg-[#251A35] rounded-[10px] border border-[#372850]">
+        <h1 className="font-epilogue font-bold sm:text-[25px] text-[18px] leading-[38px] text-[#F6F5F8]">
           Start a Campaign
         </h1>
       </div>
@@ -58,7 +74,7 @@ const CreateCampaign = () => {
             inputType="text"
             value={form.name}
             handleChange={(e) => handleFormFieldChange('name', e)}
-            customClass="text-[#e0e0f8]"
+            customClass="text-[#F6F5F8]"
           />
           <FormField 
             labelName="Campaign Title *"
@@ -66,7 +82,7 @@ const CreateCampaign = () => {
             inputType="text"
             value={form.title}
             handleChange={(e) => handleFormFieldChange('title', e)}
-            customClass="text-[#e0e0f8]"
+            customClass="text-[#F6F5F8]"
           />
         </div>
 
@@ -76,12 +92,12 @@ const CreateCampaign = () => {
           isTextArea
           value={form.description}
           handleChange={(e) => handleFormFieldChange('description', e)}
-          customClass="text-[#e0e0f8]"
+          customClass="text-[#F6F5F8]"
         />
 
-        <div className="w-full flex justify-start items-center p-4 bg-[#29294b] h-[120px] rounded-[10px] border border-[#3a3a55]">
+        <div className="w-full flex justify-start items-center p-4 bg-[#2E2142] h-[120px] rounded-[10px] border border-[#372850]">
           <img src={money} alt="money" className="w-[40px] h-[40px] object-contain" />
-          <h4 className="font-epilogue font-bold text-[25px] text-[#f0a500] ml-[20px]">
+          <h4 className="font-epilogue font-bold text-[25px] text-[#F0A500] ml-[20px]">
             You will get 100% of the raised amount
           </h4>
         </div>
@@ -93,7 +109,7 @@ const CreateCampaign = () => {
             inputType="text"
             value={form.target}
             handleChange={(e) => handleFormFieldChange('target', e)}
-            customClass="text-[#e0e0f8]"
+            customClass="text-[#F6F5F8]"
           />
           <FormField 
             labelName="End Date *"
@@ -101,7 +117,7 @@ const CreateCampaign = () => {
             inputType="date"
             value={form.deadline}
             handleChange={(e) => handleFormFieldChange('deadline', e)}
-            customClass="text-[#e0e0f8]"
+            customClass="text-[#F6F5F8]"
           />
         </div>
 
@@ -111,14 +127,14 @@ const CreateCampaign = () => {
           inputType="url"
           value={form.image}
           handleChange={(e) => handleFormFieldChange('image', e)}
-          customClass="text-[#e0e0f8]"
+          customClass="text-[#F6F5F8]"
         />
 
         <div className="flex justify-center items-center mt-[40px]">
           <CustomButton 
             btnType="submit"
             title="Submit new campaign"
-            styles="bg-[#e94560] hover:bg-[#f07b8e] text-[#f0f0f3] transition duration-300"
+            styles="bg-[#E94560] hover:bg-[#F07B8E] text-[#F6F5F8] transition duration-300"
           />
         </div>
       </form>

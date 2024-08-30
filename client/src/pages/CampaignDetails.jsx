@@ -7,6 +7,20 @@ import { CountBox, CustomButton, Loader } from '../components';
 import { calculateBarPercentage, daysLeft } from '../utils';
 import { thirdweb } from '../assets';
 
+// Define theme colors
+const themeColors = {
+  bg: '#1B1427',          // Background color
+  activeBar: '#00eaff',   // Progress bar color
+  boxBg: '#1c1c24',       // Box background color
+  boxBorder: '#2a2a35',   // Box border color
+  textPrimary: '#ffffff', // Primary text color
+  textSecondary: '#808191', // Secondary text color
+  textTertiary: '#a0a0a0', // Tertiary text color
+  shadow: '#120D1A',      // Shadow color
+  button: '#00eaff',      // Button color
+  buttonHover: '#00c0d9', // Button hover color
+};
+
 const CampaignDetails = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
@@ -35,7 +49,7 @@ const CampaignDetails = () => {
   }
 
   return (
-    <div className="text-white">
+    <div className="text-white" style={{ backgroundColor: themeColors.bg }}>
       {isLoading && <Loader />}
 
       <div className="w-full flex md:flex-row flex-col mt-10 gap-[30px]">
@@ -43,8 +57,9 @@ const CampaignDetails = () => {
           <img src={state.image} alt="campaign" className="w-full h-[410px] object-cover rounded-xl" />
           <div className="relative w-full h-[5px] bg-[#2a2a35] mt-2">
             <div
-              className="absolute h-full bg-[#00eaff]"
+              className="absolute h-full"
               style={{
+                backgroundColor: themeColors.activeBar,
                 width: `${calculateBarPercentage(state.target, state.amountCollected)}%`,
                 maxWidth: '100%',
               }}
@@ -124,7 +139,7 @@ const CampaignDetails = () => {
               <CustomButton
                 btnType="button"
                 title="Fund Campaign"
-                styles="w-full bg-[#00eaff] hover:bg-[#00c0d9]"
+                styles={`w-full bg-[${themeColors.button}] hover:bg-[${themeColors.buttonHover}]`}
                 handleClick={handleDonate}
               />
             </div>

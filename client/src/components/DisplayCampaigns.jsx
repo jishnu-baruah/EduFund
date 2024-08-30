@@ -12,8 +12,8 @@ const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
   }
   
   return (
-    <div className="p-4 bg-[#1c1c24] rounded-[10px]">
-      <h1 className="font-epilogue font-semibold text-[24px] text-white text-left mb-[20px]">
+    <div className="p-4 bg-[#412E5D] rounded-[10px]">
+      <h1 className="font-epilogue font-semibold text-[24px] text-[#F6F5F8] text-left mb-[20px]">
         {title} ({campaigns.length})
       </h1>
 
@@ -23,7 +23,7 @@ const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
         )}
 
         {!isLoading && campaigns.length === 0 && (
-          <p className="font-epilogue font-semibold text-[16px] leading-[30px] text-[#808191]">
+          <p className="font-epilogue font-semibold text-[16px] leading-[30px] text-[#CAC3D4]">
             You have not created any campaigns yet
           </p>
         )}
